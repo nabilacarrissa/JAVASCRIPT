@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Menu Navigasi dengan jQuery</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style>
+            /* Gaya CSS untuk menu */
+            #menu {
+                display: none; /* Sembunyikan menu pada awalnya */
+            }
+
+            #menu li {
+                list-style: none; /* Hapus poin-poin daftar */
+                margin: 0 10px; /* Berikan jarak antar item menu */
+            }
+
+            #menu a {
+                text-decoration: none; /* Hapus garis bawah teks */
+                color: black; /* Warna teks */
+            }
+        </style>
+    </head>
+    <body>
+        <button id="tombol-menu">Menu</button>
+        <ul id="menu">
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+
+    <script>
+        $(document).ready(function() {
+            // Sembunyikan menu saat halaman dimuat
+            $("#menu").hide();
+
+            // Tampilkan/sembunyikan menu saat tombol diklik
+            $("#tombol-menu").click(function() {
+                $("#menu").toggle();
+            });
+        });
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Waktu Saat Ini</title>
+</head>
+<body>
+    <div id="waktu"></div>
+    <script>
+        function tampilkanWaktu() {
+            const sekarang = new Date(); // Mendapatkan waktu saat ini
+            const tahun = sekarang.getFullYear(); // Mendapatkan tahun
+            const bulan = sekarang.getMonth(); // Mendapatkan bulan (di JavaScript, bulan dimulai dari 0)
+            const tanggal = sekarang.getDate(); // Mendapatkan tanggal
+            const jam = sekarang.getHours(); // Mendapatkan jam
+            const menit = sekarang.getMinutes(); // Mendapatkan menit
+            const detik = sekarang.getSeconds(); // Mendapatkan detik
+
+            // Array nama bulan dalam bahasa Indonesia
+            const namaBulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+
+            // Format tanggal
+            const tanggalString = `${tanggal} ${namaBulan[bulan]} ${tahun}`;
+
+            // Format waktu
+            const waktuString = `${jam}:${menit}:${detik}`;
+
+            // Menampilkan tanggal dan waktu
+            const elemenWaktu = document.getElementById("waktu");
+            elemenWaktu.textContent = `${tanggalString} - ${waktuString}`;
+        }
+
+        // Memperbarui waktu setiap detik
+        setInterval(tampilkanWaktu, 1000);
+
+        // Memanggil fungsi pertama kali agar tidak menunggu 1 detik pertama
+        tampilkanWaktu();
+    </script>
+</body>
+</html>
